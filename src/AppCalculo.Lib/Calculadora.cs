@@ -21,6 +21,9 @@ namespace Calculo
             return a;
         }
 
+        public int MCM(int a, int b) => (a * b) / MCD(a, b);
+        // Mínimo común múltiplo
+
         public int Max(int a, int b, int c)
         // Máx de 3 números
         {
@@ -38,13 +41,16 @@ namespace Calculo
             return max;
         }
 
-        public string Ejemplo1(int[] valores){
-        // Pruebas de Software Pág 130
-        // Devolvemos el número de impares de valores en formato xx/nn
-            var nImpar=0;
-            var i=0;
-            while(i<valores.Length){
-                if(valores[i]%2==1) {
+        public string Ejemplo1(int[] valores)
+        {
+            // Pruebas de Software Pág 130
+            // Devolvemos el número de impares de valores en formato xx/nn
+            var nImpar = 0;
+            var i = 0;
+            while (i < valores.Length)
+            {
+                if (valores[i] % 2 == 1)
+                {
                     nImpar++;
                 }
                 i++;
@@ -52,26 +58,30 @@ namespace Calculo
             return $"{nImpar}/{valores.Length}";
         }
 
-        public string Ejemplo2(Calificacion[] calificaciones){
-        // Pruebas de Software Pág 132
-        // Devolvemos un informe de Hombres y Mujeres por curso HH/MM CURSO
+        public string Ejemplo2(Calificacion[] calificaciones)
+        {
+            // Pruebas de Software Pág 132
+            // Devolvemos un informe de Hombres y Mujeres por curso HH/MM CURSO
             var i = 0;
             var nHombres = 0;
             var nMujeres = 0;
             var cursoActual = "";
             var informe = "";
 
-            while(i<calificaciones.Length){
+            while (i < calificaciones.Length)
+            {
                 nHombres = 0;
                 nMujeres = 0;
                 cursoActual = calificaciones[i].Curso;
-                while(i<calificaciones.Length && calificaciones[i].Curso == cursoActual) {
-                    if(calificaciones[i].Sexo == 'H') {
+                while (i < calificaciones.Length && calificaciones[i].Curso == cursoActual)
+                {
+                    if (calificaciones[i].Sexo == 'H')
+                    {
                         nHombres++;
                     }
                     i++;
                 }
-                informe+=$"{nHombres}/{nMujeres} {cursoActual}\n";
+                informe += $"{nHombres}/{nMujeres} {cursoActual}\n";
             }
 
             return informe;

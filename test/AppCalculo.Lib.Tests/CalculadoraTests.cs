@@ -48,6 +48,20 @@ namespace Calculo
         }
 
         [Theory]
+        [InlineData(6, 4, 12)]
+        [InlineData(15, 10, 30)]
+        [InlineData(12, 6, 12)]
+        [InlineData(13, 11, 143)]
+        public void MCM_Equal(int a, int b, int expected)
+        {
+            // Arrange
+            // Act
+            int result = cal.MCM(a, b);
+            // Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
         [InlineData(1, 2, 3, 3)]
         [InlineData(1, 3, 2, 3)]
         [InlineData(2, 1, 3, 3)]
