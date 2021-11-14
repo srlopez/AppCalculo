@@ -19,4 +19,5 @@ var f1 = new Fraccion(){
     Denominador = 11
 };
 
-Console.WriteLine($"f1 {f1.ToStringP()}");
+Console.WriteLine($"f1={f1.ToImpropioString()}");
+Console.WriteLine($"f1={f1}");

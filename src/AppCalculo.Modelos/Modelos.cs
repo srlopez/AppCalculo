@@ -11,7 +11,7 @@ namespace Calculo.Modelos
 
         public override string ToString()=>$"{Numerador}/{Denominador}";
             
-        public string ToStringP()
+        public string ToImpropioString()
         {
             int entero = (Numerador / Denominador);
             if (entero == 0)
