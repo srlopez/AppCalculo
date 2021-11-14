@@ -28,14 +28,19 @@ namespace Calculo
         // Máx de 3 números
         {
             var max = Int32.MinValue;
-            if (a > b && a > c) { max = a; }
+            if (a > b && a > c)
+            {
+                max = a;
+            }
             else
             {
-                if (a > b) { max = c; }
+                if (b > c)
+                {
+                    max = b;
+                }
                 else
                 {
-                    if (b > c) { max = b; }
-                    else { max = c; }
+                    max = c;
                 }
             }
             return max;
