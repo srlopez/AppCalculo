@@ -28,7 +28,7 @@ namespace Calculo
         {
             // Arrange
             // Act
-            int result = cal.MCD(a, b);
+            int result = cal.MaxCDiv(a, b);
             // Assert
             Assert.Equal(expected, result);
         }
@@ -42,7 +42,7 @@ namespace Calculo
         {
             // Arrange
             // Act
-            int result = cal.MCD(a, b);
+            int result = cal.MaxCDiv(a, b);
             // Assert
             Assert.NotEqual(notExpeted, result);
         }
@@ -56,7 +56,7 @@ namespace Calculo
         {
             // Arrange
             // Act
-            int result = cal.MCM(a, b);
+            int result = cal.MinCMult(a, b);
             // Assert
             Assert.Equal(expected, result);
         }

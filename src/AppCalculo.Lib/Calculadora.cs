@@ -8,8 +8,8 @@ namespace Calculo
 {
     public class Calculadora
     {
-        public int MCD(int a, int b)
-        // Máximo común divisor
+        public int MaxCDiv(int a, int b)
+        // Máximo común divisor, GCD
         {
 
             Debug.Assert(a > 0 && b > 0, "Los parámetros deben ser mayor que 0");
@@ -21,8 +21,8 @@ namespace Calculo
             return a;
         }
 
-        public int MCM(int a, int b) => (a * b) / MCD(a, b);
-        // Mínimo común múltiplo
+        public int MinCMult(int a, int b) => (a * b) / MaxCDiv(a, b);
+        // Mínimo común múltiplo, LCM
 
         public int Max(int a, int b, int c)
         // Máx de 3 números
