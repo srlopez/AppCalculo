@@ -7,7 +7,7 @@ var c = 11;
 var cal = new Calculadora();
 
 
-var mcd = cal.MCD(a, b);
+var mcd = cal.MaxCDiv(a, b);
 var max = cal.Max(b,a,c);
 
 Console.WriteLine($"El MCD es {mcd}");
