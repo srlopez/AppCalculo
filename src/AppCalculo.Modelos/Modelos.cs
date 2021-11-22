@@ -4,32 +4,51 @@ namespace Calculo.Modelos
 {
     public class Fraccion
     {
-        public int Numerador { get; init;}
-        public int Denominador { get; init;}
+        public int Numerador { get; init; }
+        public int Denominador { get; init; }
 
         public bool EsPropia() => Numerador < Denominador;
 
-        public override string ToString()=>$"{Numerador}/{Denominador}";
-            
-        public string ToImpropioString()
+        public override string ToString() => $" {Numerador}/{Denominador}";
+
+        public static Fraccion FromString(string s)
+        {
+            try
+            {
+                var valores = s.Split("/");
+                var n = Int32.Parse(valores[0]);
+                var d = Int32.Parse(valores[1]);
+                return new Fraccion()
+                {
+                    Numerador = n,
+                    Denominador = d
+                };
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public string ToStringInt()
         {
             int entero = (Numerador / Denominador);
-            if (entero == 0)
+            int numerador = Numerador - entero * Denominador;
+
+            if (entero == 0 || numerador == 0)
             {
                 return ToString();
             }
-            int numerador = Numerador - entero * Denominador;
-            return $"{entero}⇸{numerador}/{Denominador}";
+            return $" {entero}+{numerador}/{Denominador}";
         }
     }
 
-        public class Calificacion
-        {
-            public string Curso { get; }
-            public string Nombre { get; }
-            public char Sexo { get; }
-            public decimal Nota { get; }
+    public class Calificacion
+    {
+        public string Curso { get; }
+        public string Nombre { get; }
+        public char Sexo { get; }
+        public decimal Nota { get; }
 
-            public override string ToString() => $"{Curso} {Sexo}:{Nombre} {Nota}";
-        }
+        public override string ToString() => $"{Curso} {Sexo}:{Nombre} {Nota}";
     }
+}

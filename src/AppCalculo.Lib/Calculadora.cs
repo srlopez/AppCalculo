@@ -24,6 +24,18 @@ namespace Calculo
         public int MinCMult(int a, int b) => (a * b) / MaxCDiv(a, b);
         // Mínimo común múltiplo, LCM
 
+        public Fraccion Suma(Fraccion f1, Fraccion f2)
+        {
+            var n = f1.Numerador * f2.Denominador + f2.Numerador * f1.Denominador;
+            var d = f1.Denominador * f2.Denominador;
+            var mcd = MaxCDiv(n, d);
+            return new Fraccion
+            {
+                Numerador = n / mcd,
+                Denominador = d / mcd
+            };
+        }
+        
         public int Max(int a, int b, int c)
         // Máx de 3 números
         {
@@ -44,6 +56,31 @@ namespace Calculo
                 }
             }
             return max;
+        }
+
+        public int ObtenerPosicionCaseInsensitive(string[] lista, string dato)
+        {
+            for (var i = 0; i < lista.Length; i++)
+            {
+                if (lista[i].ToLower() == dato.ToLower())
+                {
+                    return i;
+                };
+            }
+            return -1;
+        }
+
+        public int SumaParImpar(int[] lista, int resto2)
+        {
+            var suma = 0;
+            for (var i = 0; i < lista.Length; i++)
+            {
+                if (lista[i] % 2 == resto2)
+                {
+                    suma += lista[i];
+                };
+            }
+            return suma;
         }
 
         public string Ejemplo1(int[] valores)
