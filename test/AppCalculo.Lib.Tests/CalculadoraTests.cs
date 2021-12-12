@@ -76,16 +76,6 @@ namespace Calculo
             // Assert
             Assert.Equal(expected, result);
         }
-    
-        [Theory]
-        [InlineData(new int[]{1, 2, 3, 3}, "3/4")]
-        [InlineData(new int[]{2, 2, 3}, "1/3")]
-        public void Ejemplo1( int[] data, string expected){
-            // Arrange
-            // Act
-            string result = cal.Ejemplo1(data);
-            // Assert
-            Assert.Equal(expected, result);
-        }
+
     }
 }
